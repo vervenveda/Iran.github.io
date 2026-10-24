@@ -27,4 +27,9 @@ This log records repository changes, not a claim that every historical question 
 - Preserved and strengthened the prominent **Free Khaemenes Academy** and **Iran Research Notebook** pathways.
 - Added real, rights-checked cultural imagery and recorded each image's provenance and license in `SOURCES.md`.
 - Removed the Google Fonts dependency from the shared stylesheet; the redesigned interface uses local/system font stacks.
+- Added a shared English ↔ Persian (فارسی) language layer across the Iran gateway and all five cultural portals: Art, Music, Script, Legacy, and Innovation.
+- Added a persistent language toggle using `VNV_IRAN_LANG`, full `lang="fa"` / RTL switching, Persian document titles, and automatic translation of dynamically opened quick-view modal content.
+- Added RTL-aware layout rules for headers, grids, portal cards, Academy ribbons, menus, modals, source lists, and mobile controls without duplicating page-specific CSS.
+- Completed Persian translation coverage for all explanatory portal text, photo captions, source labels, Academy pathway language, and the main cultural gateway.
+- Bilingual regression: shared i18n JavaScript syntax PASS; one language toggle per page; no duplicate IDs introduced; all five portal pages show zero untranslated explanatory body text in Persian mode.
 
