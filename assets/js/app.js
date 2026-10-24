@@ -11,3 +11,71 @@ const sources = [
 const list=document.querySelector("#source-list"), search=document.querySelector("#source-search");
 function render(q=""){q=q.toLowerCase().trim();const m=sources.filter(s=>[s.title,s.institution,s.type,s.description].join(" ").toLowerCase().includes(q));list.innerHTML=m.length?m.map(s=>`<article class="source"><a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.title}</a><small>${s.institution} · ${s.type}</small><p>${s.description}</p></article>`).join(""):"<p>No sources match. Try a broader term.</p>";}
 if(list){render();search.addEventListener("input",e=>render(e.target.value));}
+
+/* Verve N Veda country-site controls */
+(function(){
+  "use strict";
+  const ticker=document.getElementById("vnvTicker");
+  const tickerPause=document.getElementById("tickerPause");
+  const menuButton=document.getElementById("menuButton");
+  const menuOverlay=document.getElementById("menuOverlay");
+  const menuClose=document.getElementById("menuClose");
+  let priorFocus=null;
+
+  function setTickerPaused(paused){
+    if(!ticker||!tickerPause)return;
+    ticker.dataset.paused=String(paused);
+    tickerPause.setAttribute("aria-pressed",String(paused));
+    tickerPause.setAttribute("aria-label",paused?"Resume 333 Network ticker":"Pause 333 Network ticker");
+    tickerPause.textContent=paused?"▶":"Ⅱ";
+    try{localStorage.setItem("VNV_IRAN_TICKER_PAUSED",String(paused));}catch(e){}
+  }
+
+  if(ticker&&tickerPause){
+    let paused=false;
+    try{paused=localStorage.getItem("VNV_IRAN_TICKER_PAUSED")==="true";}catch(e){}
+    setTickerPaused(paused);
+    tickerPause.addEventListener("click",()=>setTickerPaused(ticker.dataset.paused!=="true"));
+  }
+
+  function focusables(){
+    if(!menuOverlay)return[];
+    return Array.from(menuOverlay.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])'));
+  }
+
+  function openMenu(){
+    if(!menuOverlay||!menuButton)return;
+    priorFocus=document.activeElement;
+    menuOverlay.classList.add("open");
+    menuOverlay.setAttribute("aria-hidden","false");
+    menuButton.setAttribute("aria-expanded","true");
+    document.body.classList.add("menu-open");
+    window.setTimeout(()=>menuClose&&menuClose.focus(),40);
+  }
+
+  function closeMenu(){
+    if(!menuOverlay||!menuButton)return;
+    menuOverlay.classList.remove("open");
+    menuOverlay.setAttribute("aria-hidden","true");
+    menuButton.setAttribute("aria-expanded","false");
+    document.body.classList.remove("menu-open");
+    if(priorFocus&&typeof priorFocus.focus==="function")priorFocus.focus();
+  }
+
+  if(menuButton&&menuOverlay&&menuClose){
+    menuButton.addEventListener("click",openMenu);
+    menuClose.addEventListener("click",closeMenu);
+    menuOverlay.addEventListener("click",event=>{if(event.target===menuOverlay)closeMenu();});
+    menuOverlay.querySelectorAll("a").forEach(a=>a.addEventListener("click",closeMenu));
+    document.addEventListener("keydown",event=>{
+      if(!menuOverlay.classList.contains("open"))return;
+      if(event.key==="Escape"){event.preventDefault();closeMenu();return;}
+      if(event.key==="Tab"){
+        const nodes=focusables();if(!nodes.length)return;
+        const first=nodes[0],last=nodes[nodes.length-1];
+        if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+        else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+      }
+    });
+  }
+})();
