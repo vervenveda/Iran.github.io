@@ -1,0 +1,74 @@
+[
+  {
+    "id": "iranica-iran",
+    "title": "Iran",
+    "institution": "Encyclopaedia Iranica",
+    "type": "scholarly reference",
+    "url": "https://www.iranicaonline.org/articles/iran/",
+    "use": "Overview of geography, history, languages, religions, and culture."
+  },
+  {
+    "id": "iranica-preislamic",
+    "title": "Iranian History: Pre-Islamic Times",
+    "institution": "Encyclopaedia Iranica",
+    "type": "scholarly reference",
+    "url": "https://www.iranicaonline.org/articles/iran-ii1-pre-islamic-times/",
+    "use": "Introductory survey of pre-Islamic history."
+  },
+  {
+    "id": "behistun",
+    "title": "Behistun Relief and Inscription",
+    "institution": "Oxford Centre for the Study of Ancient Documents",
+    "type": "primary-source guide",
+    "url": "https://www.cabinet.ox.ac.uk/behistun-relief-and-inscription-0",
+    "use": "Context and bibliography for Darius I's inscription."
+  },
+  {
+    "id": "cyrus-cylinder",
+    "title": "Cyrus Cylinder from Babylon",
+    "institution": "Oxford Centre for the Study of Ancient Documents",
+    "type": "primary-source guide",
+    "url": "https://www.cabinet.ox.ac.uk/cyrus-cylinder-babylon-bm-0",
+    "use": "Object context and scholarly translations."
+  },
+  {
+    "id": "constitution",
+    "title": "Constitutions and Constitutional Debates",
+    "institution": "Iran Data Portal, Syracuse University",
+    "type": "document archive",
+    "url": "https://irandataportal.syr.edu/constitutions-and-constitutional-debates/",
+    "use": "Persian and English constitutional texts."
+  },
+  {
+    "id": "frus-iran",
+    "title": "Foreign Relations of the United States: Iran 1951–1954",
+    "institution": "U.S. Department of State",
+    "type": "primary document collection",
+    "url": "https://history.state.gov/historicaldocuments/frus1951-54Iran",
+    "use": "Documentary record around oil nationalization and the 1953 coup."
+  },
+  {
+    "id": "unesco-iran",
+    "title": "Iran country page",
+    "institution": "UNESCO World Heritage Convention",
+    "type": "official heritage register",
+    "url": "https://whc.unesco.org/en/statesparties/ir",
+    "use": "Property records and conservation reports; list changes over time."
+  },
+  {
+    "id": "iaea-iran",
+    "title": "Iran country information",
+    "institution": "International Atomic Energy Agency",
+    "type": "official institutional record",
+    "url": "https://ola.iaea.org/Applications/FactSheets/Country/Detail?code=IR",
+    "use": "Membership and agreement information; supplement with dated reports."
+  },
+  {
+    "id": "unsc-2231",
+    "title": "Resolution 2231 background",
+    "institution": "United Nations Security Council",
+    "type": "official institutional record",
+    "url": "https://main.un.org/securitycouncil/en/content/2231/background",
+    "use": "Official background on the JCPOA framework."
+  }
+]

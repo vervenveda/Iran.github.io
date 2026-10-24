@@ -1,0 +1,71 @@
+[
+  {
+    "id": "IR-001",
+    "claim": "The modern Iranian state should not be projected unchanged onto ancient empires.",
+    "status": "well-supported",
+    "evidence": [
+      "Encyclopaedia Iranica",
+      "archaeological and inscriptional records"
+    ],
+    "notes": "Distinguish cultural-geographic terms from state borders and institutions."
+  },
+  {
+    "id": "IR-002",
+    "claim": "The Cyrus Cylinder is an ancient Babylonian royal inscription associated with Cyrus II's capture of Babylon in 539 BCE.",
+    "status": "documented",
+    "evidence": [
+      "Oxford Centre for the Study of Ancient Documents",
+      "Metropolitan Museum of Art"
+    ],
+    "notes": "Modern human-rights comparisons are interpretations and should be labelled as such."
+  },
+  {
+    "id": "IR-003",
+    "claim": "The Constitutional Revolution of 1905–1911 helped establish constitutional institutions in Iran.",
+    "status": "well-supported",
+    "evidence": [
+      "Encyclopaedia Iranica",
+      "Iran Data Portal"
+    ],
+    "notes": "The revolution contained diverse factions and goals."
+  },
+  {
+    "id": "IR-004",
+    "claim": "Iran nationalized its oil industry in 1951 under the Mosaddeq government.",
+    "status": "documented",
+    "evidence": [
+      "FRUS Iran 1951–1954",
+      "Library of Congress country study"
+    ],
+    "notes": "Research legal claims and domestic political context separately."
+  },
+  {
+    "id": "IR-005",
+    "claim": "U.S. intelligence participated in planning and carrying out the August 1953 coup that overthrew Mosaddeq.",
+    "status": "documented",
+    "evidence": [
+      "FRUS Iran 1951–1954",
+      "National Security Archive"
+    ],
+    "notes": "Separate documented involvement from debates about motives and long-term consequences."
+  },
+  {
+    "id": "IR-006",
+    "claim": "The 1979 revolution involved diverse groups whose political goals were not identical.",
+    "status": "well-supported",
+    "evidence": [
+      "Constitutional and historical records",
+      "scholarly histories"
+    ],
+    "notes": "Do not treat the eventual state as the sole original program of all participants."
+  },
+  {
+    "id": "IR-007",
+    "claim": "The JCPOA was concluded in 2015 and endorsed by UN Security Council Resolution 2231.",
+    "status": "documented",
+    "evidence": [
+      "UN Security Council Resolution 2231 page"
+    ],
+    "notes": "Legal status and implementation require current document-level verification."
+  }
+]
