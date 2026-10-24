@@ -1,81 +1,25 @@
-const sources = [
-{title:"Iran",institution:"Encyclopaedia Iranica",type:"Scholarly reference",url:"https://www.iranicaonline.org/articles/iran/",description:"Overview of Iran's history, languages, religions, and culture."},
-{title:"Iranian History: Pre-Islamic Times",institution:"Encyclopaedia Iranica",type:"Scholarly reference",url:"https://www.iranicaonline.org/articles/iran-ii1-pre-islamic-times/",description:"Introductory survey of pre-Islamic history."},
-{title:"Behistun Relief and Inscription",institution:"Oxford Centre for the Study of Ancient Documents",type:"Primary-source guide",url:"https://www.cabinet.ox.ac.uk/behistun-relief-and-inscription-0",description:"Context and bibliography for Darius I's trilingual inscription."},
-{title:"Cyrus Cylinder from Babylon",institution:"Oxford Centre for the Study of Ancient Documents",type:"Primary-source guide",url:"https://www.cabinet.ox.ac.uk/cyrus-cylinder-babylon-bm-0",description:"Object context and scholarly translations."},
-{title:"Constitutions and Constitutional Debates",institution:"Iran Data Portal, Syracuse University",type:"Document archive",url:"https://irandataportal.syr.edu/constitutions-and-constitutional-debates/",description:"Persian and English constitutional texts."},
-{title:"Foreign Relations of the United States: Iran, 1951–1954",institution:"U.S. Department of State",type:"Primary document collection",url:"https://history.state.gov/historicaldocuments/frus1951-54Iran",description:"Diplomatic records around oil nationalization and the 1953 coup."},
-{title:"Iran",institution:"UNESCO World Heritage Convention",type:"Official heritage register",url:"https://whc.unesco.org/en/statesparties/ir",description:"Property descriptions and conservation records."},
-{title:"Iran country information",institution:"International Atomic Energy Agency",type:"Official institutional record",url:"https://ola.iaea.org/Applications/FactSheets/Country/Detail?code=IR",description:"Membership and agreement information; supplement with dated reports."},
-{title:"Resolution 2231 background",institution:"United Nations Security Council",type:"Official institutional record",url:"https://main.un.org/securitycouncil/en/content/2231/background",description:"Official background on the JCPOA framework."}];
-const list=document.querySelector("#source-list"), search=document.querySelector("#source-search");
-function render(q=""){q=q.toLowerCase().trim();const m=sources.filter(s=>[s.title,s.institution,s.type,s.description].join(" ").toLowerCase().includes(q));list.innerHTML=m.length?m.map(s=>`<article class="source"><a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.title}</a><small>${s.institution} · ${s.type}</small><p>${s.description}</p></article>`).join(""):"<p>No sources match. Try a broader term.</p>";}
-if(list){render();search.addEventListener("input",e=>render(e.target.value));}
+const modalData={
+ art:{title:"Art · هنر",page:"culture/art.html",bullets:["UNESCO lists the art of miniature as living intangible heritage associated with Iran and neighboring traditions.","Persian garden design, manuscript illumination, carpets, tilework and architectural ornament share recurring geometries, color systems and relationships between nature and pattern.","UNESCO recognizes traditional carpet-weaving skills in both Fars and Kashan, and mirror-work in Persian architecture was inscribed in 2025."],sources:[["UNESCO · Iran intangible heritage","https://ich.unesco.org/en/state/iran-islamic-republic-of-IR"],["UNESCO · Persian Garden","https://whc.unesco.org/en/list/1372"]]},
+ music:{title:"Music · موسیقی",page:"culture/music.html",bullets:["UNESCO inscribed the Radif of Iranian music in 2009.","The Radif contains more than 250 melodic units, or gushe, organized into modal cycles and learned over years of study.","Core instruments include tar, setar, santur, kamancheh and ney; regional traditions such as the Bakhshis of Khorasan and dotar playing also have UNESCO recognition."],sources:[["UNESCO · Radif of Iranian music","https://ich.unesco.org/en/RL/radif-of-Iranian-music-00279"]]},
+ script:{title:"Script · خط",page:"culture/script.html",bullets:["Modern Persian is written in the Arabo-Persian script and includes additional letters used for Persian sounds.","Nastaʿlīq became one of the most distinctive Persian calligraphic forms, especially for poetry and literary manuscripts.","UNESCO selected Iran's national programme to safeguard traditional calligraphy for its Register of Good Safeguarding Practices in 2021."],sources:[["Encyclopaedia Iranica · writing systems","https://www.iranicaonline.org/articles/iran-vi3-writing-systems/"],["UNESCO · calligraphy safeguarding","https://ich.unesco.org/en/BSP/national-programme-to-safeguard-the-traditional-art-of-calligraphy-in-iran-01716"]]},
+ legacy:{title:"Legacy · میراث",page:"culture/legacy.html",bullets:["Iran's heritage spans archaeological, imperial, religious, literary, urban and craft traditions across many periods and communities.","UNESCO's Iran register includes Persepolis, Pasargadae, Susa, Isfahan, Yazd, the Persian Garden, Persian Qanat and other major sites.","Cultural continuity should be studied without treating ancient empires, later dynasties and the modern state as identical political entities."],sources:[["UNESCO · Iran World Heritage","https://whc.unesco.org/en/statesparties/ir"],["Encyclopaedia Iranica · Iran","https://www.iranicaonline.org/articles/iran/"]]},
+ innovation:{title:"Innovation · نوآوری",page:"culture/innovation.html",bullets:["Qanats move groundwater through gently sloping underground tunnels using gravity, supporting settlement and agriculture in arid regions.","UNESCO describes qanats as a technological and communal achievement whose management systems can remain active for centuries.","Persian gardens combine water engineering, geometry, botany and architecture; UNESCO describes them as an innovative response to climate and landscape."],sources:[["UNESCO · Persian Qanat","https://whc.unesco.org/en/list/1506"],["UNESCO · Persian Garden","https://whc.unesco.org/en/list/1372"]]},
+ research:{title:"Research & Academy · پژوهش",page:"research/index.html",bullets:["The Iran repository separates primary evidence, scholarly interpretation and institutional records.","Ten research chapters cover ancient Iran through contemporary open questions.","The Iran Research Notebook connects cultural inquiry to Khaemenes Academy Academic Evidence without turning the country site into a graded course."],sources:[["Iran source register","SOURCES.md"],["Iran Research Notebook","learning/iran-research-notebook.html"]]}
+};
 
-/* Verve N Veda country-site controls */
 (function(){
-  "use strict";
-  const ticker=document.getElementById("vnvTicker");
-  const tickerPause=document.getElementById("tickerPause");
-  const menuButton=document.getElementById("menuButton");
-  const menuOverlay=document.getElementById("menuOverlay");
-  const menuClose=document.getElementById("menuClose");
-  let priorFocus=null;
-
-  function setTickerPaused(paused){
-    if(!ticker||!tickerPause)return;
-    ticker.dataset.paused=String(paused);
-    tickerPause.setAttribute("aria-pressed",String(paused));
-    tickerPause.setAttribute("aria-label",paused?"Resume 333 Network ticker":"Pause 333 Network ticker");
-    tickerPause.textContent=paused?"▶":"Ⅱ";
-    try{localStorage.setItem("VNV_IRAN_TICKER_PAUSED",String(paused));}catch(e){}
-  }
-
-  if(ticker&&tickerPause){
-    let paused=false;
-    try{paused=localStorage.getItem("VNV_IRAN_TICKER_PAUSED")==="true";}catch(e){}
-    setTickerPaused(paused);
-    tickerPause.addEventListener("click",()=>setTickerPaused(ticker.dataset.paused!=="true"));
-  }
-
-  function focusables(){
-    if(!menuOverlay)return[];
-    return Array.from(menuOverlay.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])'));
-  }
-
-  function openMenu(){
-    if(!menuOverlay||!menuButton)return;
-    priorFocus=document.activeElement;
-    menuOverlay.classList.add("open");
-    menuOverlay.setAttribute("aria-hidden","false");
-    menuButton.setAttribute("aria-expanded","true");
-    document.body.classList.add("menu-open");
-    window.setTimeout(()=>menuClose&&menuClose.focus(),40);
-  }
-
-  function closeMenu(){
-    if(!menuOverlay||!menuButton)return;
-    menuOverlay.classList.remove("open");
-    menuOverlay.setAttribute("aria-hidden","true");
-    menuButton.setAttribute("aria-expanded","false");
-    document.body.classList.remove("menu-open");
-    if(priorFocus&&typeof priorFocus.focus==="function")priorFocus.focus();
-  }
-
-  if(menuButton&&menuOverlay&&menuClose){
-    menuButton.addEventListener("click",openMenu);
-    menuClose.addEventListener("click",closeMenu);
-    menuOverlay.addEventListener("click",event=>{if(event.target===menuOverlay)closeMenu();});
-    menuOverlay.querySelectorAll("a").forEach(a=>a.addEventListener("click",closeMenu));
-    document.addEventListener("keydown",event=>{
-      if(!menuOverlay.classList.contains("open"))return;
-      if(event.key==="Escape"){event.preventDefault();closeMenu();return;}
-      if(event.key==="Tab"){
-        const nodes=focusables();if(!nodes.length)return;
-        const first=nodes[0],last=nodes[nodes.length-1];
-        if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
-        else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
-      }
-    });
-  }
+ "use strict";
+ const ticker=document.getElementById("vnvTicker"),tickerPause=document.getElementById("tickerPause");
+ const menuButton=document.getElementById("menuButton"),menuOverlay=document.getElementById("menuOverlay"),menuClose=document.getElementById("menuClose");
+ const modal=document.getElementById("cultureModal"),modalClose=document.getElementById("modalClose"),modalTitle=document.getElementById("modalTitle"),modalBody=document.getElementById("modalBody"),modalPageLink=document.getElementById("modalPageLink");
+ let priorFocus=null,modalFocus=null;
+ function setTickerPaused(paused){if(!ticker||!tickerPause)return;ticker.dataset.paused=String(paused);tickerPause.setAttribute("aria-pressed",String(paused));tickerPause.textContent=paused?"▶":"Ⅱ";try{localStorage.setItem("VNV_IRAN_TICKER_PAUSED",String(paused))}catch(e){}}
+ if(ticker&&tickerPause){let p=false;try{p=localStorage.getItem("VNV_IRAN_TICKER_PAUSED")==="true"}catch(e){}setTickerPaused(p);tickerPause.addEventListener("click",()=>setTickerPaused(ticker.dataset.paused!=="true"))}
+ function openMenu(){priorFocus=document.activeElement;menuOverlay.classList.add("open");menuOverlay.setAttribute("aria-hidden","false");menuButton.setAttribute("aria-expanded","true");document.body.style.overflow="hidden";setTimeout(()=>menuClose.focus(),30)}
+ function closeMenu(){menuOverlay.classList.remove("open");menuOverlay.setAttribute("aria-hidden","true");menuButton.setAttribute("aria-expanded","false");document.body.style.overflow="";if(priorFocus&&priorFocus.focus)priorFocus.focus()}
+ if(menuButton)menuButton.addEventListener("click",openMenu);if(menuClose)menuClose.addEventListener("click",closeMenu);if(menuOverlay)menuOverlay.addEventListener("click",e=>{if(e.target===menuOverlay)closeMenu()});document.querySelectorAll(".menu-links a").forEach(a=>a.addEventListener("click",closeMenu));
+ function openModal(key,trigger){const d=modalData[key];if(!d)return;modalFocus=trigger||document.activeElement;modalTitle.textContent=d.title;modalBody.innerHTML="<ul>"+d.bullets.map(x=>"<li>"+x+"</li>").join("")+"</ul><div class='source-note'><strong>Starting sources</strong><br>"+d.sources.map(s=>"<a href='"+s[1]+"' target='_blank' rel='noopener noreferrer'>"+s[0]+" ↗</a>").join(" · ")+"</div>";modalPageLink.href=d.page;modal.classList.add("open");modal.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";setTimeout(()=>modalClose.focus(),30)}
+ function closeModal(){modal.classList.remove("open");modal.setAttribute("aria-hidden","true");document.body.style.overflow="";if(modalFocus&&modalFocus.focus)modalFocus.focus()}
+ document.querySelectorAll("[data-modal]").forEach(b=>b.addEventListener("click",()=>openModal(b.dataset.modal,b)));document.querySelectorAll("[data-close-modal]").forEach(b=>b.addEventListener("click",closeModal));if(modalClose)modalClose.addEventListener("click",closeModal);
+ document.addEventListener("keydown",e=>{if(e.key==="Escape"){if(modal&&modal.classList.contains("open")){e.preventDefault();closeModal();return}if(menuOverlay&&menuOverlay.classList.contains("open")){e.preventDefault();closeMenu()}}});
 })();
