@@ -1,2 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Source+Sans+3:wght@300;400;500&display=swap');
 :root{--ink:#202c2a;--muted:#5e6a64;--paper:#f4f0e6;--card:#fffdf7;--olive:#59674c;--red:#8b3e36;--gold:#b89a60;--line:#d9d1bf;--night:#182824}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Source Sans 3",Arial,sans-serif;font-weight:300;line-height:1.7}a{color:#526344;text-underline-offset:3px}.shell{max-width:1120px;margin:auto;padding:0 24px}.masthead{padding:18px 0;border-bottom:1px solid var(--line);font-size:.86rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}.hero{padding:76px 0 62px;text-align:center;background:radial-gradient(ellipse at top,rgba(184,154,96,.16),transparent 65%)}.eyebrow{letter-spacing:.23em;text-transform:uppercase;color:var(--red);font-size:.78rem}.hero h1,.section-title,h2,h3{font-family:Cinzel,Georgia,serif;font-weight:400;line-height:1.25}.hero h1{font-size:clamp(2.5rem,7vw,5.1rem);letter-spacing:.035em;margin:.25em 0}.subtitle{max-width:760px;margin:0 auto;color:var(--muted);font-size:1.2rem}.rule{width:84px;height:1px;background:var(--gold);margin:28px auto}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}.button{display:inline-block;padding:10px 18px;border:1px solid var(--olive);text-decoration:none;color:var(--olive);letter-spacing:.06em}.button.primary{background:var(--olive);color:white}.section{padding:54px 0}.section-head{margin-bottom:24px}.section-head p{color:var(--muted);max-width:760px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.panel{background:var(--card);border:1px solid var(--line);padding:22px}.panel h3{font-size:1.12rem;margin:.1em 0 .6em}.panel p{color:var(--muted);margin:.4em 0 1em}.number{font-family:Cinzel,Georgia,serif;color:var(--red);font-size:.84rem;letter-spacing:.12em}.timeline{border-left:1px solid var(--gold);margin:18px 0 0 8px;padding-left:24px}.event{position:relative;padding:0 0 22px}.event:before{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--olive);left:-29px;top:9px}.event time{color:var(--red);letter-spacing:.08em;font-size:.85rem}.search-row{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.search-row input{flex:1;min-width:240px;padding:12px;border:1px solid var(--line);background:var(--card);font:inherit}.source-list{display:grid;gap:10px}.source{padding:16px 18px;background:var(--card);border:1px solid var(--line)}.source small{display:block;color:var(--muted)}.note{border-left:3px solid var(--red);padding:12px 18px;background:rgba(139,62,54,.055)}.footer{background:var(--night);color:#f4f0e6;padding:36px 0;margin-top:30px}.footer a{color:#e0c995}.footer p{color:#d4d9d3;font-size:.9rem}.fine{font-size:.88rem;color:var(--muted)}@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:54px 0 44px}}@media(max-width:560px){.grid{grid-template-columns:1fr}.shell{padding:0 16px}.section{padding:38px 0}.hero h1{font-size:2.65rem}}
+
+/* 2026-10-24 · Verve N Veda country-site parity layer */
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.skip-link{position:absolute;left:12px;top:-100px;z-index:3000;padding:9px 13px;background:var(--card);border:2px solid var(--gold);color:var(--night);font-weight:500}
+.skip-link:focus{top:12px}
+#vnvTicker{height:35px;display:grid;grid-template-columns:minmax(0,1fr) 40px;align-items:center;background:var(--night);color:#f7f0df;border-bottom:1px solid #ffffff1d;overflow:hidden}
+#vnvTicker .viewport{overflow:hidden;white-space:nowrap}
+#vnvTicker .track{width:max-content;display:flex;animation:vnvIranTicker 42s linear infinite;will-change:transform}
+#vnvTicker[data-paused="true"] .track{animation-play-state:paused}
+#vnvTicker .set{display:flex;align-items:center;gap:22px;padding-right:22px}
+#vnvTicker .set .brand{color:#e0c995;font:500 .68rem/1 Cinzel,Georgia,serif;letter-spacing:.14em;text-transform:uppercase}
+#vnvTicker a{color:#e7e9e4;text-decoration:none;font-size:.72rem}
+#vnvTicker a:hover{text-decoration:underline}
+#vnvTicker .pause{width:40px;height:35px;border:0;border-left:1px solid #ffffff22;background:#ffffff08;color:#f4f0e6;cursor:pointer}
+@keyframes vnvIranTicker{to{transform:translateX(-50%)}}
+
+.site-header{position:sticky;top:0;z-index:1200;background:#f4f0e6f4;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.site-header .header-inner{min-height:70px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:22px}
+.site-brand{display:flex;align-items:center;gap:10px;color:var(--night);text-decoration:none}
+.site-brand-mark{width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--gold);border-radius:50%;color:var(--red);font:500 15px Cinzel,Georgia,serif}
+.site-brand strong{display:block;font:500 .9rem/1.15 Cinzel,Georgia,serif;letter-spacing:.08em}
+.site-brand small{display:block;margin-top:3px;color:var(--muted);font-size:.61rem;letter-spacing:.06em}
+.site-nav{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.site-nav a{color:var(--muted);text-decoration:none;font-size:.76rem}
+.site-nav a:hover{color:var(--red)}
+.site-actions{display:flex;align-items:center;gap:8px}
+.nav-academy{min-height:36px;display:inline-flex;align-items:center;padding:7px 10px;border:1px solid var(--olive);background:var(--olive);color:#fff;text-decoration:none;font-size:.69rem;letter-spacing:.04em}
+.menu-button{width:38px;height:38px;padding:0;display:grid;place-items:center;border:1px solid var(--line);background:var(--card);cursor:pointer}
+.menu-lines,.menu-lines:before,.menu-lines:after{width:17px;height:1px;background:var(--night);display:block;content:"";position:relative}
+.menu-lines:before{position:absolute;top:-5px;left:0}.menu-lines:after{position:absolute;top:5px;left:0}
+.masthead{padding:10px 0;border-bottom:1px solid var(--line);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:#fffdf780}
+
+.hero .actions .academy{background:var(--red);border-color:var(--red);color:#fff}
+.academy-bridge{border-block:1px solid #cdbf9f;background:#e9dfca}
+.academy-bridge-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:25px 24px}
+.academy-bridge-copy{display:flex;align-items:flex-start;gap:16px}
+.academy-badge{width:48px;height:48px;display:grid;place-items:center;flex:0 0 auto;border:1px solid var(--gold);background:var(--night);color:#f3dfae;font:500 .84rem Cinzel,Georgia,serif}
+.academy-bridge h2{margin:4px 0 7px;color:var(--night);font:400 clamp(1.35rem,2.5vw,2rem)/1.2 Cinzel,Georgia,serif}
+.academy-bridge p{margin:0;color:var(--muted);font-size:.87rem}
+.academy-bridge-actions{display:grid;gap:8px}
+.academy-bridge-action{min-height:42px;display:flex;align-items:center;justify-content:center;padding:8px 11px;border:1px solid var(--night);background:var(--night);color:#fff;text-decoration:none;font-size:.76rem;font-weight:500;text-align:center}
+.academy-bridge-action.gold{background:var(--gold);border-color:var(--gold);color:#241c10}
+.academy-bridge-action.secondary{background:transparent;color:var(--night)}
+
+.menu-overlay{position:fixed;inset:0;z-index:2500;display:none;justify-content:flex-end;background:#0c1511a8;backdrop-filter:blur(3px)}
+.menu-overlay.open{display:flex}
+.menu-drawer{width:min(430px,92vw);height:100%;overflow:auto;background:var(--paper);border-left:1px solid var(--line);box-shadow:-24px 0 70px #0003;padding:24px}
+.menu-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.menu-head .eyebrow{margin-bottom:5px}.menu-head h2{margin:0;color:var(--night);font-size:1.65rem}
+.menu-close{width:38px;height:38px;border:1px solid var(--line);background:transparent;color:var(--night);font-size:1.35rem;cursor:pointer}
+.menu-group{margin:24px 0 8px;color:var(--red);font-size:.67rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase}
+.menu-links{display:grid;gap:7px}.menu-links a{display:flex;justify-content:space-between;gap:14px;padding:11px 12px;border:1px solid var(--line);background:#fff;color:var(--night);text-decoration:none;font-size:.8rem}.menu-links a:hover{border-color:var(--gold);background:#fffaf0}.menu-mini{margin-top:22px;padding:14px;border-left:3px solid var(--red);background:#8b3e360d;color:var(--muted);font-size:.77rem}
+body.menu-open{overflow:hidden}
+
+@media(max-width:900px){
+  .site-header .header-inner{grid-template-columns:1fr auto}.site-nav{display:none}.nav-academy{display:none}
+  .academy-bridge-inner{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  #vnvTicker{height:39px;grid-template-columns:minmax(0,1fr) 40px}
+  #vnvTicker .set{gap:16px}.site-header .header-inner{min-height:62px}
+  .site-brand small{display:none}.academy-bridge-inner{padding:20px 16px}.academy-bridge-copy{align-items:center}
+}
+@media(prefers-reduced-motion:reduce){#vnvTicker .track{animation:none;transform:none}}
