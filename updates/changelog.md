@@ -18,4 +18,13 @@ This log records repository changes, not a claim that every historical question 
 - Registered Iran in the central Verve N Veda **Knowledge** registry and **World & Diplomacy** gateway.
 - Regression result: duplicate IDs 0; broken in-page anchors 0; unsafe new-tab links 0; landing-page JavaScript syntax PASS; notebook JavaScript syntax PASS; all ten research chapters retained.
 - External source check: Iranica, Syracuse Iran Data Portal, U.S. State Department FRUS, UNESCO, IAEA, and the UN Security Council resolved during the audit. Two Oxford Cabinet URLs returned automated-fetch errors and were preserved pending manual-browser verification rather than being mislabeled as dead.
+## 2026-10-24 — Cultural gateway redesign
+- Rebuilt the front landing page as a clean, distinctly Iranian cultural gateway using lapis blue, turquoise, saffron-gold, pomegranate red, ivory and deep ink.
+- Replaced the long research-scroll front page with six portals: **Art, Music, Script, Legacy, Innovation, and Research & Academy**.
+- Added accessible quick-view modal boxes for all six portals.
+- Added dedicated pages at `culture/art.html`, `culture/music.html`, `culture/script.html`, `culture/legacy.html`, and `culture/innovation.html`.
+- Added `research/index.html` so the original ten-chapter historical research spine remains easy to reach from the new front door.
+- Preserved and strengthened the prominent **Free Khaemenes Academy** and **Iran Research Notebook** pathways.
+- Added real, rights-checked cultural imagery and recorded each image's provenance and license in `SOURCES.md`.
+- Removed the Google Fonts dependency from the shared stylesheet; the redesigned interface uses local/system font stacks.
 
