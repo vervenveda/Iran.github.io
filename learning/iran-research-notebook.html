@@ -17,16 +17,19 @@ header{padding:42px 0 26px;text-align:center}.eyebrow{color:var(--red);font-size
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}label{display:block;color:#3c443e;font-size:.82rem;font-weight:700}input,select,textarea{width:100%;margin-top:5px;border:1px solid #bfb39e;background:#fff;color:var(--ink);padding:10px 11px;border-radius:2px;font-weight:400}textarea{min-height:105px;resize:vertical;line-height:1.55}.tall{min-height:155px}.source-row{display:grid;grid-template-columns:1.15fr 1fr;gap:10px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}.source-row:first-of-type{border-top:0;margin-top:0;padding-top:0}.checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.check{padding:10px 12px;border:1px solid var(--line);background:#fff}.check input{width:auto;margin:0 7px 0 0}.review-lines{display:grid;grid-template-columns:1fr 1fr;gap:12px}.footer-note{padding:20px 0 36px;text-align:center;color:var(--muted);font-size:.8rem}.print-value{display:none;white-space:pre-wrap;overflow-wrap:anywhere}
 @media(max-width:720px){.grid,.grid.three,.source-row,.review-lines,.checklist{grid-template-columns:1fr}.card{padding:17px}}
 @media print{@page{margin:13mm}body{background:#fff;color:#111;font-size:11pt}.topbar,.actions,#status,.notice,.footer-note{display:none!important}.shell{width:100%;max-width:none}header{padding:0 0 12px}form{gap:10px;padding:0}.card{box-shadow:none;border:1px solid #888;padding:12px;break-inside:avoid}input,select,textarea{display:none!important}.print-value{display:block!important;margin-top:4px;min-height:18px;border-bottom:1px solid #bbb;padding:2px 0 5px}h1{font-size:23pt}.card h2{font-size:15pt}.check input{display:inline!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+.skip-link{position:absolute;left:12px;top:-100px;z-index:100;background:var(--paper);color:var(--olive);border:2px solid var(--gold);padding:9px 12px}.skip-link:focus{top:10px}
+html[dir="rtl"] body{text-align:right}html[dir="rtl"] .check input{margin:0 0 0 7px}
 </style>
 </head>
-<body>
+<body data-i18n-page="notebook"><a class="skip-link" href="#main">Skip to main content</a>
 <div class="topbar">
   <div class="shell">
     <nav aria-label="Research notebook navigation">
-      <a href="../index.html">← Iran Research Guide</a>
+      <a href="../research/index.html">← Iran Research Archive</a><a href="../SOURCES.md">Sources & Rights</a>
       <a href="https://vervenveda.com/Khaemenes_Academy.github.io/" target="_blank" rel="noopener noreferrer">Free Khaemenes Academy ↗</a>
       <a href="https://vervenveda.com/Khaemenes_High.github.io/courses/social-studies/" target="_blank" rel="noopener noreferrer">High School Social Studies ↗</a>
-    </nav>
+    </nav><button id="languageToggle" class="lang" type="button" aria-label="Switch to Persian" aria-pressed="false">فارسی</button>
   </div>
 </div>
 <header class="shell">
@@ -36,7 +39,7 @@ header{padding:42px 0 26px;text-align:center}.eyebrow{color:var(--red);font-size
   <p class="sub">Source-led historical inquiry · Formative / ungraded · Print or export for your portfolio</p>
   <div class="notice">Privacy boundary: nothing on this page is uploaded, submitted, synchronized, or automatically saved. Print or export your work before leaving. Parent/teacher review fields are for offline review only and do not create grades, credits, or authenticated teacher access.</div>
 </header>
-<main class="shell">
+<main class="shell" id="main">
   <div class="actions">
     <button type="button" id="printBtn">Print / Save PDF</button>
     <button type="button" id="jsonBtn">Export Evidence JSON</button>
@@ -152,5 +155,6 @@ header{padding:42px 0 26px;text-align:center}.eyebrow{color:var(--red);font-size
   form.addEventListener("input",syncPrint);form.addEventListener("change",syncPrint);syncPrint();
 })();
 </script>
+<script src="../assets/js/iran-i18n.js"></script>
 </body>
 </html>
