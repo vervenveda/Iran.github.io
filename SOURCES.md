@@ -35,8 +35,8 @@ Institutional records and current status pages can change. Record publication an
 - UNESCO, Iran intangible cultural heritage register: https://ich.unesco.org/en/state/iran-islamic-republic-of-IR
 - UNESCO, Radif of Iranian music: https://ich.unesco.org/en/RL/radif-of-Iranian-music-00279
 - UNESCO, National programme to safeguard the traditional art of calligraphy in Iran: https://ich.unesco.org/en/BSP/national-programme-to-safeguard-the-traditional-art-of-calligraphy-in-iran-01716
-- UNESCO, Traditional skills of carpet weaving in Fars: https://ich.unesco.org/en/RL/karagoz-00382
-- UNESCO, Traditional skills of carpet weaving in Kashan: https://ich.unesco.org/en/RL/capoeira-00383
+- UNESCO, Traditional skills of carpet weaving in Fars: https://ich.unesco.org/en/RL/traditional-skills-of-carpet-weaving-in-fars-00382
+- UNESCO, Traditional skills of carpet weaving in Kashan: https://ich.unesco.org/en/RL/traditional-skills-of-carpet-weaving-in-kashan-00383
 - UNESCO, The Persian Garden: https://whc.unesco.org/en/list/1372
 - UNESCO, The Persian Qanat: https://whc.unesco.org/en/list/1506
 - UNESCO, Iran World Heritage properties: https://whc.unesco.org/en/statesparties/ir
@@ -48,7 +48,8 @@ Institutional records and current status pages can change. Record publication an
 - The Metropolitan Museum of Art, Shah Mahmud Nishapuri manuscript, 1528: https://www.metmuseum.org/art/collection/search/756811
 
 ### Landing-page and cultural-page image register
-- **Hero / Legacy — Fin Garden, Kashan:** Ninaras, 9 March 2013, CC BY 4.0: https://commons.wikimedia.org/wiki/File:Fin_Garden_in_Kashan.jpg
+- **Hero — Fin Garden, Kashan:** Ninaras, 9 March 2013, CC BY 4.0: https://commons.wikimedia.org/wiki/File:Fin_Garden_in_Kashan.jpg
+- **Legacy — Persepolis, Hall of a Hundred Columns area:** Folkertherlyn, 14 October 2014, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:Persepolis-Iran_01.jpg
 - **Art — Safavid Shiraz miniature, 'Abdullah Ansari with Abu Ahmad:** second half of the 16th century; public-domain artwork reproduction: https://commons.wikimedia.org/wiki/File:%27Abdullah_Ansari_with_Abu_Ahmad,_Safavid_Shiraz,_Iran,_second_half_16th_century.jpg
 - **Music — Tar made in Isfahan in 1898:** object by Isfahan Khâchik; photograph by Thom Quine, CC BY 2.0: https://commons.wikimedia.org/wiki/File:Tar_(1898)_by_Isfahan_Kh%C3%A2chik,_MfM.Uni-Leipzig.jpg
 - **Script — Nasta'liq calligraphy by Mirza Mohammad Kazem Tehrani:** public domain: https://commons.wikimedia.org/wiki/File:Nastaliq_calligraphy_(017),_Mirza_Mohammad_Kazem_Tehrani.jpg
