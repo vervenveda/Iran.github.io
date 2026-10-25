@@ -292,6 +292,7 @@
     "Resume 333 Network ticker":"ادامه نوار شبکه ۳۳۳",
     "Close quick view":"بستن نمای سریع",
     "Fin Garden in Kashan, Iran":"باغ فین در کاشان، ایران",
+    "Monumental stone architecture at Persepolis, Iran":"معماری سنگی یادمانی در تخت‌جمشید، ایران",
     "Safavid Persian miniature from Shiraz, second half of the sixteenth century":"نگارگری فارسی صفوی از شیراز، نیمه دوم سده شانزدهم",
     "Persian tar made in Isfahan in 1898":"تار ایرانی ساخته‌شده در اصفهان، ۱۸۹۸",
     "Nasta'liq Persian calligraphy by Mirza Mohammad Kazem Tehrani":"خوشنویسی نستعلیق فارسی اثر میرزا محمدکاظم تهرانی",
