@@ -12,35 +12,6 @@
 </head>
 <body data-i18n-page="home">
 <a class="skip-link" href="#main">Skip to main content</a>
-
-<div id="vnvTicker" data-paused="false" aria-label="Verve N Veda 333 Network ticker">
-  <div class="viewport">
-    <div class="track">
-      <div class="set">
-        <span class="brand">333 NETWORK</span>
-        <a href="https://vervenveda.github.io/333.github.io/app/HOLLO_333_direct_connect_index.html">HOLLO</a>
-        <a href="https://vervenveda.github.io/333.github.io/app/KANSEE_333_meeting_rooms_index.html">KANSEE</a>
-        <a href="https://vervenveda.github.io/333.github.io/app/EVen_mail_index.html">E=Ven Mail</a>
-        <a href="https://vervenveda.github.io/333.github.io/app/Bazaar_Art_Live_index.html">Bazaar Art Live</a>
-        <a href="https://vervenveda.github.io/333.github.io/app/SIte_builder_index.html">SIte Studio</a>
-        <a href="https://vervenveda.github.io/333.github.io/app/Bunya_digital_infrastructure_index.html">Bunya</a>
-        <a href="https://vervenveda.github.io/333.github.io/">Open 333 →</a>
-      </div>
-      <div class="set" aria-hidden="true">
-        <span class="brand">333 NETWORK</span>
-        <a tabindex="-1" href="https://vervenveda.github.io/333.github.io/app/HOLLO_333_direct_connect_index.html">HOLLO</a>
-        <a tabindex="-1" href="https://vervenveda.github.io/333.github.io/app/KANSEE_333_meeting_rooms_index.html">KANSEE</a>
-        <a tabindex="-1" href="https://vervenveda.github.io/333.github.io/app/EVen_mail_index.html">E=Ven Mail</a>
-        <a tabindex="-1" href="https://vervenveda.github.io/333.github.io/app/Bazaar_Art_Live_index.html">Bazaar Art Live</a>
-        <a tabindex="-1" href="https://vervenveda.github.io/333.github.io/app/SIte_builder_index.html">SIte Studio</a>
-        <a tabindex="-1" href="https://vervenveda.github.io/333.github.io/app/Bunya_digital_infrastructure_index.html">Bunya</a>
-        <a tabindex="-1" href="https://vervenveda.github.io/333.github.io/">Open 333 →</a>
-      </div>
-    </div>
-  </div>
-  <button class="pause" id="tickerPause" type="button" aria-label="Pause 333 Network ticker" aria-pressed="false">Ⅱ</button>
-</div>
-
 <header class="site-header">
   <div class="shell header-inner">
     <a class="site-brand" href="#top">
@@ -191,5 +162,9 @@
 </footer>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/iran-i18n.js"></script>
+
+<script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script>VNV_TICKER.autoPopulate({label:"Iran Quick Links",max:14});</script>
 </body>
 </html>
