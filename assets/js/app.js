@@ -9,12 +9,12 @@ const modalData={
 
 (function(){
  "use strict";
- const ticker=document.getElementById("vnvTicker"),tickerPause=document.getElementById("tickerPause");
+
  const menuButton=document.getElementById("menuButton"),menuOverlay=document.getElementById("menuOverlay"),menuClose=document.getElementById("menuClose");
  const modal=document.getElementById("cultureModal"),modalClose=document.getElementById("modalClose"),modalTitle=document.getElementById("modalTitle"),modalBody=document.getElementById("modalBody"),modalPageLink=document.getElementById("modalPageLink");
  let priorFocus=null,modalFocus=null;
- function setTickerPaused(paused){if(!ticker||!tickerPause)return;ticker.dataset.paused=String(paused);tickerPause.setAttribute("aria-pressed",String(paused));tickerPause.textContent=paused?"▶":"Ⅱ";try{localStorage.setItem("VNV_IRAN_TICKER_PAUSED",String(paused))}catch(e){}}
- if(ticker&&tickerPause){let p=false;try{p=localStorage.getItem("VNV_IRAN_TICKER_PAUSED")==="true"}catch(e){}setTickerPaused(p);tickerPause.addEventListener("click",()=>setTickerPaused(ticker.dataset.paused!=="true"))}
+
+
  function openMenu(){priorFocus=document.activeElement;menuOverlay.classList.add("open");menuOverlay.setAttribute("aria-hidden","false");menuButton.setAttribute("aria-expanded","true");document.body.style.overflow="hidden";setTimeout(()=>menuClose.focus(),30)}
  function closeMenu(){menuOverlay.classList.remove("open");menuOverlay.setAttribute("aria-hidden","true");menuButton.setAttribute("aria-expanded","false");document.body.style.overflow="";if(priorFocus&&priorFocus.focus)priorFocus.focus()}
  if(menuButton)menuButton.addEventListener("click",openMenu);if(menuClose)menuClose.addEventListener("click",closeMenu);if(menuOverlay)menuOverlay.addEventListener("click",e=>{if(e.target===menuOverlay)closeMenu()});document.querySelectorAll(".menu-links a").forEach(a=>a.addEventListener("click",closeMenu));
