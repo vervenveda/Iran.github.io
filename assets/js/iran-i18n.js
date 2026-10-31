@@ -392,8 +392,7 @@
   const ATTR={
     "Open ecosystem menu":"باز کردن منوی زیست‌بوم",
     "Close ecosystem menu":"بستن منوی زیست‌بوم",
-    "Pause 333 Network ticker":"توقف نوار شبکه ۳۳۳",
-    "Resume 333 Network ticker":"ادامه نوار شبکه ۳۳۳",
+
     "Close quick view":"بستن نمای سریع",
     "Fin Garden in Kashan, Iran":"باغ فین در کاشان، ایران",
     "Monumental stone architecture at Persepolis, Iran":"معماری سنگی یادمانی در تخت‌جمشید، ایران",
